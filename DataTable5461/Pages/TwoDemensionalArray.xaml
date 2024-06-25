@@ -1,0 +1,133 @@
+﻿<Page x:Class="DataTable5461.Pages.TwoDemensionalArray"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DataTable5461.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TwoDemensionalArray">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid x:Name="dgTwoDimensionalArray"
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               CellEditEnding="dgTwoDimensionalArray_CellEditEnding"
+               CanUserAddRows="False"/>
+        <GroupBox Header="Работа с массивосм" Grid.Row="1" 
+               Grid.Column="0" Grid.RowSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Количество столбцов"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"/>
+
+                <TextBox x:Name="txtBoxColumnValue"
+                      Grid.Row="0" 
+                      Grid.Column="2" 
+                      Grid.ColumnSpan="2"/>
+
+                <TextBlock Text="Количество строк"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"/>
+
+                <TextBox x:Name="txtBoxRowValue"
+                      Grid.Row="1" 
+                      Grid.Column="2" 
+                      Grid.ColumnSpan="2" />
+
+                <TextBlock Text="Максимальное значение"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2" />
+
+                <TextBox x:Name="txtBoxMaxValue"
+                      Grid.Row="2" 
+                      Grid.Column="2" 
+                      Grid.ColumnSpan="2"/>
+
+              
+
+                <Button Content="Создать"
+                     x:Name="btnFillArray"
+                     Click="btnFillArray_Click"
+                     Grid.Row="3"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="4"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Grid.Column="1" Header="Результаты">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+             
+                <Button Grid.Row="0" Content="Результат" 
+                     x:Name="btnResult"
+                     Click="btnResult_Click" 
+                        Grid.ColumnSpan="2"/>
+
+                <TextBox x:Name="txtBoxResult" 
+                      IsReadOnly="True" 
+                      Grid.Row="1" 
+                         Grid.ColumnSpan="2"/>
+
+                <Button  Content="Очистить" 
+                      x:Name="btnClear"
+                      Click="btnClear_Click"
+                      Grid.Row="2"
+                       Grid.ColumnSpan="2"/>
+
+                <Button Content="Сохранить"
+                         x:Name="btnSave"
+                         Click="btnSave_Click"
+                         Grid.Row="3"
+                         Grid.Column="0"/>
+
+                <Button Content="Открыть"
+                        x:Name="btnOpen"
+                        Click="btnOpen_Click"
+                        Grid.Row="3"
+                        Grid.Column="1"/>
+
+            </Grid>
+
+        </GroupBox>
+    </Grid>
+</Page>
